@@ -1,0 +1,39 @@
+/* .container {
+  width: 18rem; 
+  border-radius: 10px;
+  border: 1px solid #000000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-align: center;
+  
+ } */
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: #e4d102;
+}
+
+.off {
+  color: #ccc;
+}
+
+img {
+  width: auto;
+  min-height: 400px;
+  max-height: 400px;
+  padding: 5px;
+  border-radius: 0px;
+
+}
+
+.card {
+  width: 18rem;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
