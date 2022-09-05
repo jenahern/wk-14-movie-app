@@ -1,17 +1,32 @@
 import React, { Component } from "react";
-// import formData from "./form-input";
 import StarRating from "./Stars";
+import Review from "./Review";
 
-export default class SubmitReview extends Component {
+export default class ReviewForm extends Component {
   constructor(props){
-    super(props);}
-    
-  //   this.state ={
-  //     user: null,
-  //     content: "content here",
-  //   };
-  //   this.onFormSubmit = this.onFormSubmit.bind(this);
-  // }
+    super(props);
+
+    this.state = {
+      userValue: "",
+      contentValue: ""
+    }
+  }
+
+  // function needs to keep btn from clearing app
+  // add Review user and content value to newReview
+  // clear form for next entry
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.props.addReview(this.state.userValue);
+    this.props.addReview(this.state.contentValue);
+    const emptyInput = {userValue:'', contentValue: ''}
+  }
+
+  handleChange = (event) => {
+    // sets piece of State to text box input
+    this.setState({userValue: event.target.value});
+  }
+
   render() {
     return (
       <div className="container-fluid my-2">
@@ -20,8 +35,8 @@ export default class SubmitReview extends Component {
           <div className="col mb-2">
             <input
               type="text"
-              //   onChange={handleChange}
-              //   value={this.state.user}
+              onChange={this.handleChange}
+              value={this.state.userValue}
               name="user"
               className="form-control"
               placeholder="User Name"
@@ -29,8 +44,8 @@ export default class SubmitReview extends Component {
           </div>
           <div className="col mb-2">
             <textarea
-              //   onChange={handleChange}
-              //   value={this.state.content}
+              // onChange={this.handleChange}
+              // value={this.state.contentValue}
               name="content"
               className="form-control"
               placeholder="Your Review"
@@ -49,8 +64,8 @@ export default class SubmitReview extends Component {
           </div> */}
           <div className="col my-2">
           <button
-            type="submit"
-            // onClick={handleSubmit}
+            type="button"
+            onClick= {this.onSubmit}
             className="btn btn-primary"
           >
             Add Review

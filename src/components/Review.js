@@ -1,36 +1,28 @@
 import React, { Component } from "react";
 
-
-
 export default class Review extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     user: props.user,
-  //     content: props.content
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      reviewList: [],
+    };
+  }
+
+  addReview = (newReview) => {
+    this.setState({ review: this.state.review.concat(newReview) });
+  };
 
   render() {
-    // let reviews = [];
-    // if(this.state.reviews){
-    //   for(let review of this.state.reviews) {
-    //     reviews.push(<Review {...user}{...content}/>);
-    //   }
-    // }
-
-    
     return (
-      
-        <div className="card">
-          <div className="card-header bg-dark text-white">
-            {/* {this.state.user} */}
+      <div>
+        {this.props.reviewList.map((review) => (
+          <div className="card">
+            <div className="card-header bg-dark text-white">{this.newReview.user}</div>
+            <div className="card-body">{this.newReview.content}</div>
           </div>
-          <div className="card-body">
-            {/* {this.state.content} */}
-            </div>
-        </div>
-     
+        ))}
+      </div>
     );
   }
 }
