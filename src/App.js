@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { render } from "@testing-library/react";
+
 
 import MovieCard from "./components/MovieCard";
 import movieList from "./components/movieList";
 import Review from "./components/Review";
 import StarRating from "./components/Stars";
-import SubmitReview from "./components/review-form";
+import ReviewForm from "./components/review-form";
+
 
 
 export default class App extends Component {
@@ -17,8 +18,10 @@ export default class App extends Component {
         <div className="row row-sm">
         
             <MovieCard details={movieList}/>
-            <Review />        
-            <SubmitReview />
+                {/* <Review /> */}
+                {/* <Review addReview={this.addReview} /> */}
+            <ReviewForm />
+      
     </div>
     </div>
   
@@ -26,4 +29,5 @@ export default class App extends Component {
     );
   }
 }
+
 
