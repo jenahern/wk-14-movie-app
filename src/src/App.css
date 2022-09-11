@@ -1,0 +1,17 @@
+img {
+  width: auto;
+  min-height: 400px;
+  max-height: 400px;
+  padding: 5px;
+}
+
+.card {
+  width: 18rem;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+input.radio {
+  visibility: hidden;
+}
